@@ -22,16 +22,16 @@ OFILES = gba.o font.o gameLogic.o gameGraphics.o main.o
 # DO NOT EDIT BELOW.
 ################################################################################
 
-include /opt/cs2110-tools/GBAVariables.mak
-
-# Son, it's time to be an adult and use adult prototypes
-CFLAGS += -Wstrict-prototypes -Wold-style-definition
-
 .PHONY: all
 all : CFLAGS += $(CRELEASE) -I../shared
 all : LDFLAGS += $(LDRELEASE)
 all: $(PROGNAME).gba
 	@echo "[FINISH] Created $(PROGNAME).gba"
+
+include /opt/cs2110-tools/GBAVariables.mak
+
+# Son, it's time to be an adult and use adult prototypes
+CFLAGS += -Wstrict-prototypes -Wold-style-definition
 
 debug : CFLAGS += $(CDEBUG) -I../shared
 debug : LDFLAGS += $(LDDEBUG)
