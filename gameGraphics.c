@@ -1,5 +1,4 @@
 #include "gameGraphics.h"
-#include "gbaGraphics.h"
 #include "gba.h"
 
 // TA-TODO: Add any draw/undraw functions for sub-elements of your game here.

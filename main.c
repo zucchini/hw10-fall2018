@@ -1,4 +1,6 @@
-#include "myLib.h"
+#include "gba.h"
+#include "gameLogic.h"
+#include "gameGraphics.h"
 
 // TA-TODO: INCLUDE THE HEADERS YOU NEED FOR IMAGES
 
@@ -7,7 +9,7 @@
 
 // State enum definition
 typedef enum {
-  // TA-TODO: CEM-TODO
+  // TA-TODO: Add any additional states you need for your game.
   START,
   START_NODRAW,
   GAME_INIT,
@@ -31,6 +33,7 @@ int main() {
     // Load the current state of the buttons
     currentButtons = BUTTONS;
 
+    // TA-TODO: Manipulate the state machine below as needed.
     switch(state) {
       case START:
         // TA-TODO: Draw the start state here.

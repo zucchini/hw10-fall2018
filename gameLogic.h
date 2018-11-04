@@ -1,3 +1,5 @@
+#include "gba.h"
+
 typedef struct {
   // Store whether or not the game is over in this member:
   int gameOver;

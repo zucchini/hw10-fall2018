@@ -1,3 +1,5 @@
+#include "gameLogic.h"
+
 // This function will be used to draw everything about the game
 // including the background and whatnot.
 void fullDrawGame(Game *game);

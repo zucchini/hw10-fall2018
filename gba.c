@@ -1,4 +1,38 @@
-#include "lib.h"
+#include "gba.h"
+
+u16 *videoBuffer = (u16 *)0x6000000;
+u32 vBlankCounter = 0;
+
+void waitForVBlank() {
+  // TA-TODO: IMPLEMENT
+
+  // Write a while loop that keeps going until we're NOT in vBlank anymore:
+  // (This prevents counting one vblank more than once if your game is too fast)
+
+
+  // Write a while loop that keeps going until we're in vBlank:
+
+
+  // Finally, increment the vBlank counter:
+
+
+}
+
+static int __qran_seed= 42;
+static int sqran(int seed) {
+    int old= __qran_seed;
+    __qran_seed= seed;
+    return old;
+}
+
+static int qran() {
+    __qran_seed= 1664525*__qran_seed+1013904223;
+    return (__qran_seed>>16) & 0x7FFF;
+}
+
+int randint(int min, int max) {
+	return (qran()*(max-min)>>15)+min;
+}
 
 void setPixel(int x, int y, u16 color) {
   // TA-TODO: IMPLEMENT

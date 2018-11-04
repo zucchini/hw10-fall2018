@@ -22,9 +22,11 @@ void processGame(Game *game, u32 keysPressedBefore, u32 keysPressedNow) {
    * you want to detect each key press once, or the KEY_DOWN macro for checking
    * if a button is still down.
    *
-   * To count time, suppose that the GameBoy runs at a fixed FPS (30fps) and
+   * To count time, suppose that the GameBoy runs at a fixed FPS (60fps) and
    * that vblank is processed once per frame. Use the vBlankCounter variable
-   * and the modulus % operator to do things once every (n) frames.
+   * and the modulus % operator to do things once every (n) frames. Note that
+   * you want to process button every frame regardless (otherwise you will
+   * miss inputs.)
    *
    * Do not do any drawing here.
    */
