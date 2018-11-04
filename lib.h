@@ -1,14 +1,11 @@
-typedef unsigned short u16;
+/** An unsigned 32-bit (4-byte) type */
 typedef unsigned int u32;
+
+/** An unsigned 16-bit (2-byte) type */
+typedef unsigned short u16;
+
+/** An unsigned 8-bit (1-byte) type. Note that this type cannot be written onto RAM directly. */
 typedef unsigned char u8;
-
-//function headers
-void waitForVblank(void);
-void setPixel(int row, int col, u16 color);
-
-void drawRectangle(int row, int col, int width, int height, u16 color);
-
-void drawGhost(int r, int c, int width, int height, const unsigned short *image);
 
 #define OFFSET(r, c, rowlen) ((c)+(rowlen)*(r))
 
@@ -22,15 +19,14 @@ void drawGhost(int r, int c, int width, int height, const unsigned short *image)
 #define GREEN COLOR(0, 31, 0)
 #define BLACK 0
 
-#define WIDTH 240 //this is the width of the GBA emulator
+#define WIDTH 240 //this is the width of the GBA
+#define HEIGHT 160
 
-/* Mode 3 */
 extern volatile unsigned short *videoBuffer;               // 0x6000000
-// Need in one of your .c files:
-//     volatile unsigned short *videoBuffer = (volatile unsigned short *)0x6000000;
+// This is initialized in gba.c ^
+
 #define REG_DISPCNT  *(volatile unsigned short *) 0x4000000
 #define SCANLINECOUNTER (volatile unsigned short *)0x4000006
-
 
 //BUTTONS
 #define BUTTON_A		(1<<0)
@@ -44,31 +40,11 @@ extern volatile unsigned short *videoBuffer;               // 0x6000000
 #define BUTTON_R		(1<<8)
 #define BUTTON_L		(1<<9)
 
-#define BUTTONS (*(volatile unsigned int *)0x4000130)
-#define KEY_DOWN_NOW(key)  (~(BUTTONS) & key)
-
-
-
+#define BUTTONS *(volatile u32 *)0x4000130
+#define KEY_DOWN(key, buttons)  (~(buttons) & (key))
+#define KEY_JUST_PRESSED(key, buttons, oldbuttons) (KEY_DOWN)
 
 /* DMA */
-
-#define REG_DMA0SAD         *(const volatile u32*)0x40000B0 // source address
-#define REG_DMA0DAD         *(volatile u32*)0x40000B4       // destination address
-#define REG_DMA0CNT         *(volatile u32*)0x40000B8       // control register
-
-// DMA channel 1 register definitions
-#define REG_DMA1SAD         *(const volatile u32*)0x40000BC // source address
-#define REG_DMA1DAD         *(volatile u32*)0x40000C0       // destination address
-#define REG_DMA1CNT         *(volatile u32*)0x40000C4       // control register
-
-// DMA channel 2 register definitions
-#define REG_DMA2SAD         *(const volatile u32*)0x40000C8 // source address
-#define REG_DMA2DAD         *(volatile u32*)0x40000CC       // destination address
-#define REG_DMA2CNT         *(volatile u32*)0x40000D0       // control register
-
-// DMA channel 3 register definitions
-#define REG_DMA3SAD         *(const volatile u32*)0x40000D4 // source address
-#define REG_DMA3DAD         *(volatile u32*)0x40000D8       // destination address
 #define REG_DMA3CNT         *(volatile u32*)0x40000DC       // control register
 
 typedef struct
@@ -107,3 +83,20 @@ typedef struct
 
 #define DMA_IRQ (1 << 30)
 #define DMA_ON (1 << 31)
+
+/** Counts vblanks **/
+extern u32 vblankCounter;
+
+/**
+ * Runs a blocking loop until the start of next VBlank.
+ */
+void waitForVBlank();
+
+/**
+ * Generates a pseudo-random number between min and max, inclusive.
+ *
+ * @param  min bottom end of range.
+ * @param  max top end of range.
+ * @return     random number in the given range.
+ */
+int randint(int min, int max);
