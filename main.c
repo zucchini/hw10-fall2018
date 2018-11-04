@@ -18,7 +18,7 @@ typedef enum {
   GAMEOVER_NODRAW,
 } GBAState;
 
-int main() {
+int main(void) {
   GBAState state = START;
   Game game;
 
@@ -47,22 +47,22 @@ int main() {
         break;
       case GAME_INIT:
         // Initialize the game. Switch to the GAME state.
-        initializeGame(game);
+        initializeGame(&game);
 
         // Draw the initial state of the game
-        fullDrawGame(game);
+        fullDrawGame(&game);
 
         state = GAME;
         break;
       case GAME:
         // Un-draw any potentially moving elements of the game
-        undrawGame(game);
+        undrawGame(&game);
 
         // Process the game for one frame
-        processGame(game, previousButtons, currentButtons);
+        processGame(&game, previousButtons, currentButtons);
 
         // Draw the current state of the game
-        drawGame(game);
+        drawGame(&game);
 
         // Check if the game is over. If it is, then go to the gameover state.
         if (game.gameOver) state = GAMEOVER;

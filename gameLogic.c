@@ -4,6 +4,7 @@ void initializeGame(Game* game) {
     // TA-TODO: Initialize everything that's part of this Game struct here.
     // Suppose the struct contains random values, make sure everything gets
     // the value it should have when the game begins.
+    UNUSED(game);
 }
 
 // TA-TODO: Add any process functions for sub-elements of your game here.
@@ -30,5 +31,7 @@ void processGame(Game *game, u32 keysPressedBefore, u32 keysPressedNow) {
    *
    * Do not do any drawing here.
    */
-
+   UNUSED(game);
+   UNUSED(keysPressedBefore);
+   UNUSED(keysPressedNow);
 }

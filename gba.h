@@ -1,3 +1,6 @@
+#ifndef GBA_SEEN
+#define GBA_SEEN
+
 // ---------------------------------------------------------------------------
 //                       USEFUL TYPEDEFS
 // ---------------------------------------------------------------------------
@@ -112,12 +115,12 @@ extern u32 vblankCounter;
 /**
  * Runs a blocking loop until the start of next VBlank.
  */
-void waitForVBlank();
+void waitForVBlank(void);
 
 // ---------------------------------------------------------------------------
 //                       MISC
 // ---------------------------------------------------------------------------
-#define UNUSED_PARAM(param) ((void)((param)))
+#define UNUSED(param) ((void)((param)))
 
 /**
  * Generates a pseudo-random number between min and max, inclusive.
@@ -136,10 +139,12 @@ void drawRectDMA(int x, int y, int width, int height, volatile u16 color);
 void drawFullScreenImageDMA(u16 *image);
 void drawImageDMA(int x, int y, int width, int height, u16 *image);
 void fillScreenDMA(volatile u16 color);
-void drawChar(int x, int y, char ch, u16 color);
-void drawString(int x, int y, char *str, u16 color);
-void drawCenteredString(int x, int y, int width, int height, char *str, u16 color);
+void drawChar(int col, int row, char ch, u16 color);
+void drawString(int col, int row, char *str, u16 color);
+void drawCenteredString(int col, int row, int width, int height, char *str, u16 color);
 
 /** Contains the pixels of each character from a 6x8 font */
 // This is in the font.c file. You can replace the font if you want.
 extern const unsigned char fontdata_6x8[12288];
+
+#endif

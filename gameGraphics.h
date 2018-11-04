@@ -1,3 +1,6 @@
+#ifndef GRAPHICS_SEEN
+#define GRAPHICS_SEEN
+
 #include "gameLogic.h"
 
 // This function will be used to draw everything about the game
@@ -14,3 +17,5 @@ void drawGame(Game *game);
 
 // If you have anything else you need accessible from outside the gameLogic.c
 // file, you can add them here. You likely won't.
+
+#endif

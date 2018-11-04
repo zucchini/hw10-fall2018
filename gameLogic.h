@@ -1,3 +1,6 @@
+#ifndef LOGIC_SEEN
+#define LOGIC_SEEN
+
 #include "gba.h"
 
 typedef struct {
@@ -39,3 +42,5 @@ void processGame(Game *game, u32 keysPressedBefore, u32 keysPressedNow);
 
 // If you have anything else you need accessible from outside the gameLogic.c
 // file, you can add them here. You likely won't.
+
+#endif
