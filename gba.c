@@ -1,6 +1,6 @@
 #include "gba.h"
 
-volatile unsigned short *videoBuffer = (u16 *)0x6000000;
+volatile unsigned short *videoBuffer = (volatile unsigned short *)0x6000000;
 u32 vBlankCounter = 0;
 
 void waitForVBlank(void) {
