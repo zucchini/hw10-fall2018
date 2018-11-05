@@ -21,10 +21,12 @@ typedef enum {
 } GBAState;
 
 int main(void) {
+    // TA-TODO: Manipulate REG_DISPCNT here to set Mode 3.
+
     GBAState state = START;
     Game game;
 
-    // We
+    // We store the current and previous values of the button input.
     u32 previousButtons = BUTTONS;
     u32 currentButtons = BUTTONS;
 
