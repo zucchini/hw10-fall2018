@@ -1,4 +1,3 @@
-
 const unsigned char fontdata_6x8[12288] = {
 /* num: 0 */
 0,0,0,0,0,0,

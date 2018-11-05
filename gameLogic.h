@@ -4,19 +4,19 @@
 #include "gba.h"
 
 typedef struct {
-  // Store whether or not the game is over in this member:
-  int gameOver;
+    // Store whether or not the game is over in this member:
+    int gameOver;
 
-  /*
-   * TA-TODO: Add any logical elements you need to keep track of in your game.
-   *
-   * For example, for a Snake game, those could be:
-   *
-   * Snake snake;
-   * Food foods[10];
-   * int points;
-   *
-   */
+    /*
+    * TA-TODO: Add any logical elements you need to keep track of in your game.
+    *
+    * For example, for a Snake game, those could be:
+    *
+    * Snake snake;
+    * Food foods[10];
+    * int points;
+    *
+    */
 
 } Game;
 
