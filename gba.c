@@ -6,7 +6,7 @@ u32 vBlankCounter = 0;
 void waitForVBlank(void) {
   // TA-TODO: IMPLEMENT
 
-  // Write a while loop that keeps going until we're NOT in vBlank anymore:
+  // Write a while loop that loops until we're NOT in vBlank anymore:
   // (This prevents counting one vblank more than once if your game is too fast)
 
 
@@ -29,33 +29,33 @@ int randint(int min, int max) {
 }
 
 void setPixel(int x, int y, u16 color) {
-  // TA-TODO: IMPLEMENT
-  UNUSED(x);
-  UNUSED(y);
-  UNUSED(color);
+    // TA-TODO: IMPLEMENT
+    UNUSED(x);
+    UNUSED(y);
+    UNUSED(color);
 }
 
 void drawRectDMA(int x, int y, int width, int height, volatile u16 color) {
-  // TA-TODO: IMPLEMENT
-  UNUSED(x);
-  UNUSED(y);
-  UNUSED(width);
-  UNUSED(height);
-  UNUSED(color);
+    // TA-TODO: IMPLEMENT
+    UNUSED(x);
+    UNUSED(y);
+    UNUSED(width);
+    UNUSED(height);
+    UNUSED(color);
 }
 
 void drawFullScreenImageDMA(u16 *image) {
-  // TA-TODO: IMPLEMENT
-  UNUSED(image);
+    // TA-TODO: IMPLEMENT
+    UNUSED(image);
 }
 
 void drawImageDMA(int x, int y, int width, int height, u16 *image) {
-  // TA-TODO: IMPLEMENT
-  UNUSED(x);
-  UNUSED(y);
-  UNUSED(width);
-  UNUSED(height);
-  UNUSED(image);
+    // TA-TODO: IMPLEMENT
+    UNUSED(x);
+    UNUSED(y);
+    UNUSED(width);
+    UNUSED(height);
+    UNUSED(image);
 }
 
 void fillScreenDMA(volatile u16 color) {
