@@ -5,7 +5,7 @@
 ################################################################################
 
 # TA-TODO: Put your game name here.
-# The name of your desired GBA game
+# The name of your desired application
 # This should be a just a name i.e MyFirstGBAGame
 # No SPACES AFTER THE NAME.
 PROGNAME = Game
@@ -15,7 +15,7 @@ PROGNAME = Game
 # that will be compiled into your program. For example
 # if you have main.c and myLib.c then in the following
 # line you would put main.o and myLib.o
-OFILES = gba.o font.o gameLogic.o gameGraphics.o main.o images/garbage.o
+OFILES = gba.o font.o logic.o graphics.o main.o images/garbage.o
 
 ################################################################################
 # These are various settings used to make the GBA toolchain work
@@ -75,4 +75,4 @@ submit: clean
 .PHONY : clean
 clean :
 	@echo "[CLEAN] Removing all compiled files"
-	rm -f *.o *.elf *.gba *.log
+	rm -f *.o *.elf *.gba *.log */*.o
