@@ -67,6 +67,11 @@ med : $(PROGNAME).gba
 	@cp mednafen-09x.cfg ~/.mednafen/
 	@mednafen $(MEDOPT) $(PROGNAME).gba >emulator.log 2>&1
 
+.PHONY : submit
+submit: clean
+	@rm -f submission.tar.gz
+	@tar czvf submission.tar.gz $(wildcard *)
+
 .PHONY : clean
 clean :
 	@echo "[CLEAN] Removing all compiled files"
