@@ -16,6 +16,6 @@ void undrawGame(Game *game);
 void drawGame(Game *game);
 
 // If you have anything else you need accessible from outside the gameLogic.c
-// file, you can add them here. You likely won't.
+// file, you can add them here.
 
 #endif

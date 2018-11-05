@@ -2,8 +2,8 @@
 #include "gba.h"
 
 // TA-TODO: Add any draw/undraw functions for sub-elements of your game here.
-// For example, for a snake game, you could have a processSnake function
-// or a createRandomFood function or a processFoods function.
+// For example, for a snake game, you could have a drawSnake function
+// or a drawFood function
 //
 // e.g.:
 // static void drawSnake(Snake* snake);
