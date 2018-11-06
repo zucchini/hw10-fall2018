@@ -39,7 +39,7 @@ int main(void) {
         // TA-TODO: Manipulate the state machine below as needed.
         switch(state) {
         case START:
-            // Wait for vblank
+            // Wait for VBlank
             waitForVBlank();
 
             // TA-TODO: Draw the start state here.
@@ -64,7 +64,7 @@ int main(void) {
             // Process the app for one frame, store the next state
             nextAppState = processAppState(&currentAppState, previousButtons, currentButtons);
 
-            // Wait for vblank before we do any drawing.
+            // Wait for VBlank before we do any drawing.
             waitForVBlank();
 
             // Undraw the previous state
@@ -81,7 +81,7 @@ int main(void) {
 
             break;
         case APP_EXIT:
-            // Wait for vblank
+            // Wait for VBlank
             waitForVBlank();
 
             // TA-TODO: Draw the exit / gameover screen

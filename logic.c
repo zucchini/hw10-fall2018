@@ -26,7 +26,7 @@ AppState processAppState(AppState *currentAppState, u32 keysPressedBefore, u32 k
      * if a button is still down.
      *
      * To count time, suppose that the GameBoy runs at a fixed FPS (60fps) and
-     * that vblank is processed once per frame. Use the vBlankCounter variable
+     * that VBlank is processed once per frame. Use the vBlankCounter variable
      * and the modulus % operator to do things once every (n) frames. Note that
      * you want to process button every frame regardless (otherwise you will
      * miss inputs.)

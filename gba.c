@@ -7,7 +7,7 @@ void waitForVBlank(void) {
     // TA-TODO: IMPLEMENT
 
     // Write a while loop that loops until we're NOT in vBlank anymore:
-    // (This prevents counting one vblank more than once if your app is too fast)
+    // (This prevents counting one VBlank more than once if your app is too fast)
 
 
     // Write a while loop that keeps going until we're in vBlank:
